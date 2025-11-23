@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vegan Products - Green Leaf Grocers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <style>
+        body {
+            background-image: url('image-plant-pattern.png');
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-size: 400px;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4CAF50", // A vibrant, natural green
+                        "background-light": "#F9FAF6", // Off-white with a hint of green
+                        "background-dark": "#1F2937", // A deep, muted dark blue-gray
+                    },
+                    fontFamily: {
+                        display: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem", // 8px
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 antialiased">
+    <div class="relative min-h-screen">
+        <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex items-center">
+                        <a class="flex items-center space-x-2" href="#">
+                            <span class="material-icons text-primary text-4xl">eco</span>
+                            <span class="text-2xl font-bold text-gray-800 dark:text-white">Vegan</span>
+                        </a>
+                    </div>
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300" href="#">Home</a>
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300" href="#">About Us</a>
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300" href="#">Contact Us</a>
+                    </nav>
+                    <div class="md:hidden">
+                        <button class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                            <span class="material-icons">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h1 class="text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">Our Products</h1>
+            <p class="text-lg text-center text-gray-600 dark:text-gray-400 mb-12">Discover our curated collection of delicious vegan groceries.</p>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <aside class="w-full lg:w-1/4">
+                    <div class="sticky top-28">
+                        <h2 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white flex items-center">
+                            <span class="material-icons mr-2 text-primary">filter_list</span>
+                            Categories
+                        </h2>
+                        
+                        <div id="category-container" class="space-y-4">
+                            <p class="p-3 text-gray-600 dark:text-gray-400">
+                                Loading categories...
+                            </p>
+                        </div>
+
+                    </div>
+                </aside>
+                <div class="w-full lg:w-3/4">
+
+                    <div id="vendor-filter-message" style="display:none; margin-bottom:1rem;"></div>
+                    
+                    <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                        
+                        <p id="loading-message" class="col-span-full text-center text-lg text-gray-600 dark:text-gray-400 py-12">
+                            Fetching products, please wait...
+                        </p>
+
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <button class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">
+                            Load More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-100 dark:bg-gray-900 mt-16 border-t border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Sitemap</h3>
+                        <ul>
+                            <li class="mb-2"><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Home</a></li>
+                            <li class="mb-2"><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Products</a></li>
+                            <li class="mb-2"><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">About Us</a></li>
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Categories</h3>
+                        <ul>
+                            <li class="mb-2"><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Pantry</a></li>
+                            <li class="mb-2"><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Fresh Produce</a></li>
+                            <li class="mb-2"><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Dairy-Free</a></li>
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Snacks</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Support</h3>
+                        <ul>
+                            <li class="mb-2"><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">FAQ</a></li>
+                            <li class="mb-2"><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Shipping & Returns</a></li>
+                            <li><a class="text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Follow Us</h3>
+                        <div class="flex justify-center md:justify-start space-x-4">
+                            <a class="text-gray-500 hover:text-primary" href="#"><img alt="Facebook icon" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE45MoepAIXTRCsOjIjDWe55_HN-RqArdD1RTnU5Hy42VHMHU_Tfe5qf45vm0DDOq1BvKfi9QLdaQDRaO_jSmj6JaHamVtav0Kf5znCStFKInmxdO73E8XbLOMpdQueRs8_EZYolvBQxcnjsq89ysBzmb_s3jetKWcgfv2c0FZeeh6655--0uqJ7lUyYOG4Xr_yt3MNK_-mWaQWbAEnZWm6Aq_pEFapwzqAZtJqx7exK4-23wPXTwW_jTpYrDbv2P6sxS45FQpFIgH" /></a>
+                            <a class="text-gray-500 hover:text-primary" href="#"><img alt="Instagram icon" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvo-iBupxl72HKx6vMhWHAEaoqMj3ztsILzsRIxq4rE7yxYLFD8eSctTetOJyWJ2N2gFvTxLBacN4R3Wk2nsv6yRl48HlKVmiJ1HiL-HT84oJkxfe0FPqstceXDE72lr8XdK2Hb0rxJQTJ5upNl4qmQcGNE8Y1DvfHGYwDwEgJO_LSC1DCZLlYBNXisQZA0L38MXBYQj8uXOsGKJUU_KFOAirimjzplNx_IdV70U3QUB1sxchHqIKEmBpeWrBc5UFFEp1fZz0erW2R" /></a>
+                            <a classs="text-gray-500 hover:text-primary" href="#"><img alt="Twitter icon" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE3ATeePsf72coCOKCMeON4EE2kHbMypwB7sFigkYE5mIjN4uVeAVHb0kBW7IPpl4ZRe30LimegR-UjRRVA38gm450F65L69eldUPx_mL--uPssb8xlXyhww5-CSM9iHwZREWDO2A9N0xQ_ygRiL11PFlzmErNbXc2013BQXjuhs-uGWNTFOVW4jiILbCdoWD754rZFItAbAcCtnP8vRLvo7Y421PYXG6xNJlK9KN1y-dao9GjqspxX6CbiAwwNPj6glwNaiDIsL3i" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-400">
+                    <p>© 2024 Green Leaf Grocers. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

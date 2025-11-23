@@ -1,0 +1,115 @@
+/* --- EASY EDIT VARIABLES --- */
+:root {
+  --main-bg-color: #f4f7f6;
+  --card-color: #ffffff;
+  --text-dark-color: #2c3e50;
+  --text-light-color: #7f8c8d;
+  --accent-color: #27ae60;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --border-color: #ecf0f1;
+}
+
+/* --- GENERAL STYLES --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: var(--main-bg-color);
+  color: var(--text-dark-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark-color);
+}
+
+/* --- PRODUCT GRID --- */
+#product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --- PRODUCT CARD STYLING --- */
+.product-card {
+  background-color: var(--card-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--text-dark-color);
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: var(--text-light-color);
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  flex-grow: 1;
+}
+
+.product-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin: 0 0 1rem 0;
+  text-align: right;
+}
+
+.product-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  margin-top: auto;
+}
+
+.product-link:hover {
+  background-color: #2ecc71;
+}
+
+/* --- MESSAGES --- */
+.loading-message, .error-message, #vendor-filter-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-light-color);
+}
