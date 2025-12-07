@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- STATE MANAGEMENT ---
     let currentPage = 1;
     let currentCategory = null; 
+    let currentStatus = null; // NEW: Track selected status
     let currentVendor = getVendorFromQuery(); // Get vendor from URL (?vendor=Zepto)
     let isFetching = false;
 
     // --- DOM ELEMENTS ---
     const productContainer = document.getElementById('product-container');
     const categoryContainer = document.getElementById('category-container');
+    const statusContainer = document.getElementById('status-container'); // NEW
     const loadingMessage = document.getElementById('loading-message');
     const vendorFilterMessage = document.getElementById('vendor-filter-message');
     const loadMoreContainer = document.getElementById('load-more-container');
@@ -77,6 +79,55 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.add('bg-primary', 'text-white');
     }
 
+    // --- NEW FUNCTION: INITIALIZE STATUS FILTERS ---
+    function initStatusFilters() {
+        if (!statusContainer) return;
+        statusContainer.innerHTML = '';
+
+        const statuses = [
+            { label: 'All', value: null },
+            { label: 'Vegan', value: 'VEGAN' },
+            { label: 'Not Vegan', value: 'NON_VEGAN' },
+            { label: 'Unsure', value: 'UNSURE' }
+        ];
+
+        statuses.forEach(status => {
+            const btn = document.createElement('button');
+            btn.textContent = status.label;
+            // Same styling as category buttons
+            btn.className = 'w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 text-gray-600 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-800 bg-white dark:bg-gray-900';
+            
+            // Highlight "All" by default
+            if (status.value === null) {
+                btn.classList.remove('bg-white', 'dark:bg-gray-900', 'text-gray-600');
+                btn.classList.add('bg-primary', 'text-white');
+            }
+
+            btn.addEventListener('click', () => {
+                // 1. Reset visual styles for all status buttons
+                const allButtons = statusContainer.querySelectorAll('button');
+                allButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-white', 'dark:bg-gray-900', 'text-gray-600');
+                });
+                // 2. Set active style for clicked button
+                btn.classList.remove('bg-white', 'dark:bg-gray-900', 'text-gray-600');
+                btn.classList.add('bg-primary', 'text-white');
+
+                // 3. Update Logic
+                currentStatus = status.value;
+                currentPage = 1; // Reset to page 1
+                
+                // 4. Reload
+                const productContainer = document.getElementById('product-container');
+                productContainer.innerHTML = '';
+                fetchProducts(); // Or fetchPage(), whatever your main function is named
+            });
+
+            statusContainer.appendChild(btn);
+        });
+    }
+
     // --- 2. FETCH PRODUCTS (Main Logic) ---
     async function fetchProducts() {
         if (isFetching) return;
@@ -104,6 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (currentCategory) {
             url.searchParams.append('category', currentCategory);
+        }
+
+        // NEW: Add Status Filter
+        if (currentStatus) {
+            url.searchParams.append('status', currentStatus);
         }
 
         try {
@@ -210,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 4. INITIALIZATION ---
+    initStatusFilters(); // NEW
     fetchCategories(); 
     fetchProducts();   
 });
