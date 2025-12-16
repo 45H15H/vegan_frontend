@@ -175,26 +175,27 @@
                                 </div>
                             </div>
                         </div>
-                        <form class="bg-background-light dark:bg-[#111714] p-6 md:p-8 rounded-xl space-y-4 border border-gray-200 dark:border-white/5">
+                        <form id="contactForm" action="https://formspree.io/f/mpwvgjpl" method="POST" class="bg-background-light dark:bg-[#111714] p-6 md:p-8 rounded-xl space-y-4 border border-gray-200 dark:border-white/5">
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="space-y-2">
                                     <label class="text-sm font-medium text-slate-900 dark:text-white">First Name</label>
-                                    <input class="w-full rounded-lg bg-white dark:bg-surface-highlight border-gray-200 dark:border-white/10 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" placeholder="Jane" type="text"/>
+                                    <input name="firstName" required class="w-full rounded-lg bg-white dark:bg-surface-highlight border-gray-200 dark:border-white/10 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" placeholder="Jane" type="text"/>
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-sm font-medium text-slate-900 dark:text-white">Last Name</label>
-                                    <input class="w-full rounded-lg bg-white dark:bg-surface-highlight border-gray-200 dark:border-white/10 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" placeholder="Doe" type="text"/>
+                                    <input name="lastName" required class="w-full rounded-lg bg-white dark:bg-surface-highlight border-gray-200 dark:border-white/10 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" placeholder="Doe" type="text"/>
                                 </div>
                             </div>
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-slate-900 dark:text-white">Email</label>
-                                <input class="w-full rounded-lg bg-white dark:bg-surface-highlight border-gray-200 dark:border-white/10 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" placeholder="jane@example.com" type="email"/>
+                                <input name="email" required class="w-full rounded-lg bg-white dark:bg-surface-highlight border-gray-200 dark:border-white/10 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" placeholder="jane@example.com" type="email"/>
                             </div>
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-slate-900 dark:text-white">Message</label>
-                                <textarea class="w-full rounded-lg bg-white dark:bg-surface-highlight border-gray-200 dark:border-white/10 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" placeholder="How can we help?" rows="4"></textarea>
+                                <textarea name="message" required class="w-full rounded-lg bg-white dark:bg-surface-highlight border-gray-200 dark:border-white/10 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" placeholder="How can we help?" rows="4"></textarea>
                             </div>
-                            <button class="w-full bg-primary hover:bg-[#2bc466] text-background-dark font-bold py-3 rounded-lg transition-colors" type="button">Send Message</button>
+                            <button class="w-full bg-primary hover:bg-[#2bc466] text-background-dark font-bold py-3 rounded-lg transition-colors" type="submit">Send Message</button>
+                            <p id="formStatus" class="text-center text-sm font-medium hidden"></p>
                         </form>
                     </div>
                 </div>
@@ -255,5 +256,43 @@
         </div>
     </footer>
 </div>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = this;
+        const status = document.getElementById('formStatus');
+        const button = form.querySelector('button[type="submit"]');
+        
+        // Disable button and show loading state
+        button.disabled = true;
+        button.classList.add('opacity-70', 'cursor-not-allowed');
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                form.reset();
+                status.textContent = "Message sent successfully!";
+                status.className = "text-center text-sm font-medium mt-2 text-green-600 dark:text-green-400";
+            } else {
+                const data = await response.json();
+                status.textContent = data.errors ? data.errors.map(error => error.message).join(", ") : "Oops! There was a problem submitting your form";
+                status.className = "text-center text-sm font-medium mt-2 text-red-600 dark:text-red-400";
+            }
+        } catch (error) {
+            status.textContent = "Oops! There was a problem submitting your form";
+            status.className = "text-center text-sm font-medium mt-2 text-red-600 dark:text-red-400";
+        } finally {
+            button.disabled = false;
+            button.classList.remove('opacity-70', 'cursor-not-allowed');
+        }
+    });
+</script>
 </body>
 </html>
