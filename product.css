@@ -1,0 +1,47 @@
+/* hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Remove background strip behind categories */
+div:has(> #category-container) {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* FORCE pill styling on all children */
+#category-container > * {
+  all: unset;                     /* remove default styles */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  padding: 0.5rem 1.1rem !important;
+  border-radius: 9999px !important;
+
+  background-color: #2A2F2C !important;
+  color: #D1D5DB !important;
+
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  white-space: nowrap;
+
+  transition: all 0.2s ease-in-out;
+}
+
+/* hover */
+#category-container > *:hover {
+  background-color: #353B37 !important;
+}
+
+/* active pill (ALL) */
+#category-container > *.active {
+  background-color: #3DDC84 !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
