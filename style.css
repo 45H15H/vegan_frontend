@@ -30,6 +30,40 @@ header h1 {
   color: var(--text-dark-color);
 }
 
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Category pill styling */
+#category-container > * {
+  white-space: nowrap;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #2A2F2C;
+  color: #D1D5DB;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+#category-container > *:hover {
+  background-color: #353B37;
+}
+
+/* Active category (ALL) */
+#category-container > *.active {
+  background-color: #3DDC84;
+  color: #000000;
+  font-weight: 600;
+}
+
+
 /* --- PRODUCT GRID --- */
 #product-container {
   display: grid;
@@ -113,3 +147,4 @@ header h1 {
   font-size: 1.2rem;
   color: var(--text-light-color);
 }
+
