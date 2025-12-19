@@ -72,14 +72,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- STATUS FILTER ---
-    if (statusSelect) {
-        statusSelect.addEventListener('change', () => {
-            currentStatus = statusSelect.value || null;
-            currentPage = 1;
-            productContainer.innerHTML = '';
-            fetchProducts();
+    // if (statusSelect) {
+    //     statusSelect.addEventListener('change', () => {
+    //         currentStatus = statusSelect.value || null;
+    //         currentPage = 1;
+    //         productContainer.innerHTML = '';
+    //         fetchProducts();
+    //     });
+    // }
+
+    // --- UPDATED STATUS FILTER LOGIC ---
+    window.updateSwitch = function(index, value) {
+        const highlight = document.getElementById('switch-highlight');
+        if (!highlight) return;
+        
+        const labels = highlight.parentElement.querySelectorAll('label');
+        
+        // 1. Move the highlight
+        highlight.style.transform = `translateX(${index * 100}%)`;
+
+        // 2. Update colors
+        labels.forEach((label, i) => {
+            if (i === index) {
+                label.style.color = "#112117"; // background-dark
+            } else {
+                label.style.color = "#9eb7a8"; // text-subtle
+            }
         });
-    }
+
+        // 3. Update internal state (This is the part that was missing)
+        currentStatus = value || null;
+        currentPage = 1;
+        productContainer.innerHTML = '';
+        
+        // 4. Trigger the fetch
+        fetchProducts();
+    };
 
     // --- FETCH PRODUCTS ---
     async function fetchProducts() {
@@ -192,4 +220,29 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchCategories();
     fetchProducts();
 });
+
+// This function needs to be global to be called by the 'onclick' in HTML
+window.updateSwitch = function(index, value) {
+    const highlight = document.getElementById('switch-highlight');
+    const labels = highlight.parentElement.querySelectorAll('label');
+    
+    // 1. Move the green highlight background
+    highlight.style.transform = `translateX(${index * 100}%)`;
+
+    // 2. Update text colors for contrast
+    labels.forEach((label, i) => {
+        if (i === index) {
+            label.style.color = "#112117"; // background-dark color
+        } else {
+            label.style.color = "#9eb7a8"; // text-subtle color
+        }
+    });
+
+    // 3. Update the app state and fetch new products
+    // We use a custom event or call a global update if necessary
+    // But since your variables are inside a closure, we dispatch a fake change
+    const statusSelect = document.getElementById('status-select-hidden');
+    statusSelect.value = value;
+    statusSelect.dispatchEvent(new Event('change'));
+};
  
