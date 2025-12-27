@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURATION ---
-    const apiBase = 'https://vegan-backend-1zi7.onrender.com/api/products/';
+    // const apiBase = 'https://vegan-backend-1zi7.onrender.com/api/products/';
+    const apiBase = 'https://vegan-backend-5s3q.onrender.com/api/products/';
+    // 
     
     // --- STATE ---
     let currentPage = 1;
