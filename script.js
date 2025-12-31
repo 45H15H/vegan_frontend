@@ -188,9 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="relative h-48">
                     <img src="${product.image_url || 'https://placehold.co/600x400'}"
                          class="w-full h-full object-cover">
-                    <span class="absolute top-3 right-3 px-3 py-1 text-xs font-bold rounded-full ${badge}">
-                        ${label}
-                    </span>
                 </div>
 
                 <div class="p-5 flex flex-col flex-grow">
