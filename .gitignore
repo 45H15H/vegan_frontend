@@ -1,1 +1,4 @@
 backend/.veganos_env/*
+backend/*
+data/*
+
