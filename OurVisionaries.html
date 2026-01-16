@@ -4,8 +4,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Only Vegan</title>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -14,8 +15,9 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
+    <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -43,150 +45,119 @@
       };
     </script>
   </head>
-  <body
-    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-300"
-  >
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-      <header
-        class="sticky top-0 z-50 w-full border-b border-solid border-b-gray-200 dark:border-b-[#29382f] bg-background-light/80 dark:bg-[#111714]/80 backdrop-blur-md"
-      >
-        <div
-          class="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10"
-        >
-          <div class="flex items-center gap-8">
-            <a
-              class="flex items-center gap-3 text-slate-900 dark:text-white hover:opacity-80 transition-opacity group"
-              href="#"
-            >
-              <span
-                class="material-symbols-outlined text-[32px] text-primary group-hover:scale-110 transition-transform duration-500"
-              >
-                spa
-              </span>
-              <h2 class="text-xl font-bold leading-tight tracking-tight">
-                Only Vegan
-              </h2>
-            </a>
-          </div>
 
-          <div class="flex justify-end gap-4 md:gap-6 items-center">
-            <nav class="hidden md:flex items-center gap-8">
-              <a
-                class="text-sm font-medium hover:text-primary transition-colors"
-                href="index.html#home"
-                >Home</a
-              >
-              <a
-                class="text-sm font-medium hover:text-primary transition-colors"
-                href="index.html#about"
-                >About</a
-              >
-              <a
-                class="text-sm font-medium hover:text-primary transition-colors"
-                href="index.html#contact"
-                >Contact</a
-              >
-            </nav>
-          </div>
+  <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+      <!-- HEADER -->
+      <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-[#29382f] bg-background-light/80 dark:bg-[#111714]/80 backdrop-blur-md">
+        <div class="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
+          <a class="flex items-center gap-3 group" href="#">
+            <span class="material-symbols-outlined text-[32px] text-primary">spa</span>
+            <h2 class="text-xl font-bold">Only Vegan</h2>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8">
+            <a class="text-sm font-medium hover:text-primary" href="#index.html#home">Home</a>
+            <a class="text-sm font-medium hover:text-primary" href="index.html#about">About</a>
+            <a class="text-sm font-medium hover:text-primary" href="index.html#contact">Contact</a>
+          </nav>
         </div>
       </header>
-<main class="max-w-[1200px] mx-auto px-6 py-12">
-<!-- Page Heading -->
-<div class="mb-20 text-center md:text-left">
-<h2 class="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6">Our Visionaries</h2>
-<p class="text-xl text-[#9eb7a8] leading-relaxed">
-                The hearts and minds behind the Vagan movement. We're on a mission to make plant-based living accessible, delicious, and undeniably sustainable for everyone.
-            </p>
-</div>
-<!-- Founder 1: Alex Rivers -->
-<section class="mb-32">
-<div class="flex flex-col lg:flex-row gap-12 items-center">
-<!-- Image Container with Border Accent -->
-<div class="w-full lg:w-2/5 relative group">
-<div class="absolute -inset-4 border-2 border-primary/30 rounded-xl transition-all group-hover:inset-0 group-hover:border-primary"></div>
-<div class="relative aspect-[4/5] bg-zinc-800 rounded-xl overflow-hidden">
-<div class="w-full h-full bg-cover bg-center" data-alt="Professional portrait of Alex Rivers in a modern kitchen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnjyprEHuawY26ZIDZEeES8PcTCaar7is5m5S1OxiPPQ7dXxpAHVoa9MWG4lFpDODMafEvbPFnDsVFPAc_bpw09OL0IZGbhX7Hs1ELDldsRer_W3rs5P_Jje795tjia7M1LecS9yUR2otGMF28ZIf0nbywC2wiyLFbgDdXQ9noiQ2kFQuddPJ0bwsGlxLIoh6Zle_EOh-40xRSK3uqMX5eZUpyHA43lNy4oYTrO-_u9yu9sEFeQ7A9yYD7tgOmZvxnKnwfPP33gsY");'></div>
-</div>
-</div>
-<!-- Content Container -->
-<div class="w-full lg:w-1/2 flex flex-col gap-6">
-<div class="space-y-2">
-<span class="text-primary font-bold uppercase tracking-widest text-xs">The Visionary</span>
-<h3 class="text-4xl font-bold text-white">Alex Rivers</h3>
-<p class="text-xl font-medium text-primary">Chief Green Officer</p>
-</div>
-<div class="space-y-4 text-lg text-[#9eb7a8] leading-relaxed">
-<p>
-                            Alex is a culinary innovator with 15 years of experience in plant-based nutrition. Her journey started in the heart of San Francisco, where she realized the disconnect between traditional gourmet dining and ethical consumption.
-                        </p>
-<p>
-                            Her passion lies in creating flavors that bridge the gap between tradition and sustainability. At Vagan, she oversees our recipe development and flavor science lab, ensuring that "vegan" never means "compromise."
-                        </p>
-</div>
-<!-- Quote Callout -->
-<div class="py-8 border-y border-[#29382f]">
-<h4 class="text-2xl font-bold text-white italic leading-tight">
-                            "We aren't just changing plates; we're changing perspectives on what food can be."
-                        </h4>
-</div>
-<div class="flex items-center gap-4">
-<button class="flex items-center gap-2 px-6 py-3 bg-[#29382f] hover:bg-zinc-800 rounded-full text-white font-bold transition-colors">
-<span class="material-symbols-outlined text-primary">link</span>
-                            LinkedIn Profile
-                        </button>
-<button class="flex items-center gap-2 px-6 py-3 bg-transparent border border-[#29382f] hover:border-primary rounded-full text-white font-bold transition-colors">
-<span class="material-symbols-outlined text-primary">mail</span>
-                            Contact
-                        </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Founder 2: Jordan Lee -->
-<section class="mb-32">
-<div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
-<!-- Image Container with Border Accent -->
-<div class="w-full lg:w-2/5 relative group">
-<div class="absolute -inset-4 border-2 border-primary/30 rounded-xl transition-all group-hover:inset-0 group-hover:border-primary"></div>
-<div class="relative aspect-[4/5] bg-zinc-800 rounded-xl overflow-hidden">
-<div class="w-full h-full bg-cover bg-center" data-alt="Portrait of Jordan Lee in a bright office space" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBeW0_J5o9R9eSQYPSY56x9kSezhPdKIdPFdbIDgPrf9We5srbyuIIcGjytxPeNYGmdQvLKxPDwWxoxsMIHo3bOZyO8mfKqvRhLRzTmbC60cbWi6im26FkXCVr1JrFkeOE1G_5nmVq0Rb671vA7-Uciu8tOYRzDHSbu5gfD7lrWMrbi6uLQbeUaSrp-bYwh8vaE8ALLT7f1F2xj-ooW90XhqVsvO6Zt4u0mut38M1n11mFI5cC-j6S8zZs417vIHn-2fL4731_16c");'></div>
-</div>
-</div>
-<!-- Content Container -->
-<div class="w-full lg:w-1/2 flex flex-col gap-6 text-left lg:text-right lg:items-end">
-<div class="space-y-2">
-<span class="text-primary font-bold uppercase tracking-widest text-xs">The Strategist</span>
-<h3 class="text-4xl font-bold text-white">Jordan Lee</h3>
-<p class="text-xl font-medium text-primary">Head of Sustainability</p>
-</div>
-<div class="space-y-4 text-lg text-[#9eb7a8] leading-relaxed max-w-xl">
-<p>
-                            Jordan's background in environmental science drives Vagan's commitment to ethical sourcing and zero-waste logistics. He spent a decade advising global logistics firms on carbon neutrality before deciding to build something of his own.
-                        </p>
-<p>
-                            He believes the future is green or not at all. Under his leadership, Vagan has achieved 100% plastic-free packaging and established direct-trade relationships with over 200 sustainable farms worldwide.
-                        </p>
-</div>
-<!-- Quote Callout -->
-<div class="py-8 border-y border-[#29382f] w-full">
-<h4 class="text-2xl font-bold text-white italic leading-tight">
-                            "Sustainability isn't a feature; it's our foundation. Every choice we make considers the seventh generation."
-                        </h4>
-</div>
-<div class="flex items-center gap-4">
-<button class="flex items-center gap-2 px-6 py-3 bg-[#29382f] hover:bg-zinc-800 rounded-full text-white font-bold transition-colors">
-<span class="material-symbols-outlined text-primary">link</span>
-                            LinkedIn Profile
-                        </button>
-<button class="flex items-center gap-2 px-6 py-3 bg-transparent border border-[#29382f] hover:border-primary rounded-full text-white font-bold transition-colors">
-<span class="material-symbols-outlined text-primary">public</span>
-                            Our Eco-Impact
-                        </button>
-</div>
-</div>
-</div>
-</section>
+
+      <!-- MAIN -->
+      <main class="max-w-[1200px] mx-auto px-6 py-12">
+
+        <!-- Heading -->
+        <div class="mb-20">
+          <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-6">Our Visionaries</h2>
+          <p class="text-xl text-[#9eb7a8] leading-relaxed">
+            A small group of individuals working together, each bringing their own ideas, perspectives, and experiences to the table.
+          </p>
+        </div>
+
+        <!-- PERSON 1 -->
+        <section class="mb-32">
+          <div class="flex flex-col lg:flex-row gap-12 items-center">
+
+            <!-- Image -->
+            <div class="w-full lg:w-2/5 relative group">
+              <div class="absolute -inset-4 border-2 border-primary/30 rounded-xl group-hover:inset-0"></div>
+              <div class="relative aspect-[4/5] rounded-xl overflow-hidden">
+                <div class="w-full h-full bg-cover bg-center"
+                  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnjyprEHuawY26ZIDZEeES8PcTCaar7is5m5S1OxiPPQ7dXxpAHVoa9MWG4lFpDODMafEvbPFnDsVFPAc_bpw09OL0IZGbhX7Hs1ELDldsRer_W3rs5P_Jje795tjia7M1LecS9yUR2otGMF28ZIf0nbywC2wiyLFbgDdXQ9noiQ2kFQuddPJ0bwsGlxLIoh6Zle_EOh-40xRSK3uqMX5eZUpyHA43lNy4oYTrO-_u9yu9sEFeQ7A9yYD7tgOmZvxnKnwfPP33gsY');">
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="w-full lg:w-1/2 flex flex-col gap-6">
+              <div>
+                <span class="text-primary uppercase tracking-widest text-xs font-bold">Person 1</span>
+                <h3 class="text-4xl font-bold">Person 1</h3>
+                <p class="text-xl text-primary">Team Lead</p>
+              </div>
+
+              <div class="text-lg text-[#9eb7a8] space-y-4">
+                <p>
+                  Person 1 enjoys working through ideas and approaching tasks with patience and focus. They prefer maintaining balance while handling responsibilities.
+                </p>
+                <p>
+                  Known for adapting well to change, Person 1 values learning from experience and steadily improving over time.
+                </p>
+              </div>
+
+              <div class="py-8 border-y border-[#29382f]">
+                <h4 class="text-2xl italic font-bold">
+                  "Every experience adds a new perspective."
+                </h4>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PERSON 2 -->
+        <section class="mb-32">
+          <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+
+            <!-- Image -->
+            <div class="w-full lg:w-2/5 relative group">
+              <div class="absolute -inset-4 border-2 border-primary/30 rounded-xl group-hover:inset-0"></div>
+              <div class="relative aspect-[4/5] rounded-xl overflow-hidden">
+                <div class="w-full h-full bg-cover bg-center"
+                  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBeW0_J5o9R9eSQYPSY56x9kSezhPdKIdPFdbIDgPrf9We5srbyuIIcGjytxPeNYGmdQvLKxPDwWxoxsMIHo3bOZyO8mfKqvRhLRzTmbC60cbWi6im26FkXCVr1JrFkeOE1G_5nmVq0Rb671vA7-Uciu8tOYRzDHSbu5gfD7lrWMrbi6uLQbeUaSrp-bYwh8vaE8ALLT7f1F2xj-ooW90XhqVsvO6Zt4u0mut38M1n11mFI5cC-j6S8zZs417vIHn-2fL4731_16c');">
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="w-full lg:w-1/2 flex flex-col gap-6 lg:text-right lg:items-end">
+              <div>
+                <span class="text-primary uppercase tracking-widest text-xs font-bold">Person 2</span>
+                <h3 class="text-4xl font-bold">Person 2</h3>
+                <p class="text-xl text-primary">Coordinator</p>
+              </div>
+
+              <div class="text-lg text-[#9eb7a8] space-y-4 max-w-xl">
+                <p>
+                  Person 2 focuses on organization and clarity, preferring structured approaches and steady workflows.
+                </p>
+                <p>
+                  They believe consistency and communication play an important role in achieving meaningful progress.
+                </p>
+              </div>
+
+              <div class="py-8 border-y border-[#29382f] w-full">
+                <h4 class="text-2xl italic font-bold">
+                  "Progress happens one step at a time."
+                </h4>
+              </div>
+            </div>
+          </div>
+        </section>
+
 </main>
+
 <footer class="border-t border-gray-200 dark:border-surface-highlight bg-white dark:bg-[#0c100e] pt-16 pb-8">
       <div class="mx-auto max-w-[1280px] px-6 lg:px-10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -225,8 +196,8 @@
             </h4>
             <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors"
               href="index.html#about">About Us</a>
-            <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors" href="index.html#about">Our
-              Mission</a>
+            <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors" href="OurVisionaries.html">Our
+              Visionaries</a>
             <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors" href="#">Partner
               Apps</a>
             <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors"
