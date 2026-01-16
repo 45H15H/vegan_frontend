@@ -1,143 +1,164 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="dark scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Only Vegan</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Only Vegan - Products</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-    rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="product.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
 
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#36e27b",
-            "background-light": "#f6f8f7",
-            "background-dark": "#112117",
-            "surface-dark": "#1a2620",
-            "surface-highlight": "#29382f",
-            "text-subtle": "#9eb7a8",
-          },
-          fontFamily: {
-            display: ["Spline Sans", "sans-serif"],
-            body: ["Noto Sans", "sans-serif"],
-          },
-          borderRadius: {
-            DEFAULT: "1rem",
-            lg: "2rem",
-            xl: "3rem",
-            full: "9999px",
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#36e27b",
+              "background-light": "#f6f8f7",
+              "background-dark": "#112117",
+              "surface-dark": "#1a2620",
+              "surface-highlight": "#29382f",
+              "text-subtle": "#9eb7a8",
+            },
+            fontFamily: {
+              display: ["Spline Sans", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
+            },
           },
         },
-      },
-    };
-  </script>
-</head>
+      };
+    </script>
+  </head>
 
-<body
-  class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-300">
-  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-    <header
-      class="sticky top-0 z-50 w-full border-b border-solid border-b-gray-200 dark:border-b-[#29382f] bg-background-light/80 dark:bg-[#111714]/80 backdrop-blur-md">
-      <div class="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
-        <div class="flex items-center gap-8">
-          <a class="flex items-center gap-3 text-slate-900 dark:text-white hover:opacity-80 transition-opacity group"
-            href="index.html">
-            <span
-              class="material-symbols-outlined text-[32px] text-primary group-hover:scale-110 transition-transform duration-500">
-              spa
-            </span>
-            <h2 class="text-xl font-bold leading-tight tracking-tight">
-              Only Vegan
-            </h2>
+  <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+      <!-- HEADER -->
+      <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-[#29382f] bg-background-light/80 dark:bg-[#111714]/80 backdrop-blur-md">
+        <div class="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
+          <a class="flex items-center gap-3 group" href="#">
+            <span class="material-symbols-outlined text-[32px] text-primary">spa</span>
+            <h2 class="text-xl font-bold">Only Vegan</h2>
           </a>
-        </div>
 
-        <div class="flex justify-end gap-4 md:gap-6 items-center">
           <nav class="hidden md:flex items-center gap-8">
-            <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
-            <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#about">About</a>
-            <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#contact">Contact</a>
+            <a class="text-sm font-medium hover:text-primary" href="#index.html#home">Home</a>
+            <a class="text-sm font-medium hover:text-primary" href="index.html#about">About</a>
+            <a class="text-sm font-medium hover:text-primary" href="index.html#contact">Contact</a>
           </nav>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <main class="flex-1">
-      <div class="mx-auto max-w-[1280px] px-4 md:px-6 lg:px-10 py-6 md:py-8 space-y-10">
-        <section class="space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <h2 class="text-xl md:text-2xl font-bold tracking-tight whitespace-nowrap">
-              Shop by Category
-            </h2>
+      <!-- MAIN -->
+      <main class="max-w-[1200px] mx-auto px-6 py-12">
 
-            <!-- <div
-              class="relative flex bg-[#1a2620] p-1 rounded-full border border-white/10 w-full sm:w-auto min-w-[300px] isolate">
-              <div id="switch-highlight"
-                class="absolute h-[calc(100%-8px)] w-[calc(33.33%-4px)] bg-primary rounded-full transition-all duration-300 ease-out z-0 translate-x-0">
+        <!-- Heading -->
+        <div class="mb-20">
+          <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-6">Our Visionaries</h2>
+          <p class="text-xl text-[#9eb7a8] leading-relaxed">
+            A small group of individuals working together, each bringing their own ideas, perspectives, and experiences to the table.
+          </p>
+        </div>
+
+        <!-- PERSON 1 -->
+        <section class="mb-32">
+          <div class="flex flex-col lg:flex-row gap-12 items-center">
+
+            <!-- Image -->
+            <div class="w-full lg:w-2/5 relative group">
+              <div class="absolute -inset-4 border-2 border-primary/30 rounded-xl group-hover:inset-0"></div>
+              <div class="relative aspect-[4/5] rounded-xl overflow-hidden">
+                <div class="w-full h-full bg-cover bg-center"
+                  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnjyprEHuawY26ZIDZEeES8PcTCaar7is5m5S1OxiPPQ7dXxpAHVoa9MWG4lFpDODMafEvbPFnDsVFPAc_bpw09OL0IZGbhX7Hs1ELDldsRer_W3rs5P_Jje795tjia7M1LecS9yUR2otGMF28ZIf0nbywC2wiyLFbgDdXQ9noiQ2kFQuddPJ0bwsGlxLIoh6Zle_EOh-40xRSK3uqMX5eZUpyHA43lNy4oYTrO-_u9yu9sEFeQ7A9yYD7tgOmZvxnKnwfPP33gsY');">
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="w-full lg:w-1/2 flex flex-col gap-6">
+              <div>
+                <span class="text-primary uppercase tracking-widest text-xs font-bold">Person 1</span>
+                <h3 class="text-4xl font-bold">Person 1</h3>
+                <p class="text-xl text-primary">Team Lead</p>
               </div>
 
-              <label
-                class="relative flex-1 text-center py-2 text-sm font-bold cursor-pointer z-10 transition-colors duration-300"
-                style="color: #112117;" onclick="updateSwitch(0, '')">
-                All
-              </label>
+              <div class="text-lg text-[#9eb7a8] space-y-4">
+                <p>
+                  Person 1 enjoys working through ideas and approaching tasks with patience and focus. They prefer maintaining balance while handling responsibilities.
+                </p>
+                <p>
+                  Known for adapting well to change, Person 1 values learning from experience and steadily improving over time.
+                </p>
+              </div>
 
-              <label
-                class="relative flex-1 text-center py-2 text-sm font-bold cursor-pointer z-10 transition-colors duration-300"
-                style="color: #9eb7a8;" onclick="updateSwitch(1, 'VEGAN')">
-                Vegan
-              </label>
-
-              <label
-                class="relative flex-1 text-center py-2 text-sm font-bold cursor-pointer z-10 transition-colors duration-300"
-                style="color: #9eb7a8;" onclick="updateSwitch(2, 'NON_VEGAN')">
-                Non-Vegan
-              </label>
-            </div> -->
-          </div>
-
-          <div class="w-full overflow-hidden bg-[#1A1F1C] p-4">
-            <div id="category-container"
-              class="flex w-full gap-3 overflow-x-auto pb-2 scrollbar-hide md:pb-0 items-center">
-              <p class="text-sm text-gray-500">Loading categories...</p>
+              <div class="py-8 border-y border-[#29382f]">
+                <h4 class="text-2xl italic font-bold">
+                  "Every experience adds a new perspective."
+                </h4>
+              </div>
             </div>
           </div>
+        </section>
 
-          <div id="vendor-filter-message"
-            class="hidden mb-4 p-3 bg-surface-highlight/50 border border-primary/20 rounded-lg text-white"></div>
+        <!-- PERSON 2 -->
+        <section class="mb-32">
+          <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
 
-          <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <p id="loading-message" class="col-span-full text-center text-lg text-gray-500 py-12">
-              Fetching products...
-            </p>
-          </div>
+            <!-- Image -->
+            <div class="w-full lg:w-2/5 relative group">
+              <div class="absolute -inset-4 border-2 border-primary/30 rounded-xl group-hover:inset-0"></div>
+              <div class="relative aspect-[4/5] rounded-xl overflow-hidden">
+                <div class="w-full h-full bg-cover bg-center"
+                  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBeW0_J5o9R9eSQYPSY56x9kSezhPdKIdPFdbIDgPrf9We5srbyuIIcGjytxPeNYGmdQvLKxPDwWxoxsMIHo3bOZyO8mfKqvRhLRzTmbC60cbWi6im26FkXCVr1JrFkeOE1G_5nmVq0Rb671vA7-Uciu8tOYRzDHSbu5gfD7lrWMrbi6uLQbeUaSrp-bYwh8vaE8ALLT7f1F2xj-ooW90XhqVsvO6Zt4u0mut38M1n11mFI5cC-j6S8zZs417vIHn-2fL4731_16c');">
+                </div>
+              </div>
+            </div>
 
-          <div id="load-more-container" class="flex justify-center mt-12" style="display: none">
-            <button id="load-more-btn" class="mx-auto flex items-center gap-2 px-6 py-3 rounded-full 
-                bg-white dark:bg-surface-highlight border border-gray-200 
-                dark:border-transparent text-slate-900 dark:text-white 
-                font-bold hover:bg-gray-100 dark:hover:bg-[#3d5245] 
-                transition-colors shadow-sm">
-              Load More Products
-              <span class="material-symbols-outlined text-sm">expand_more</span>
-            </button>
+            <!-- Content -->
+            <div class="w-full lg:w-1/2 flex flex-col gap-6 lg:text-right lg:items-end">
+              <div>
+                <span class="text-primary uppercase tracking-widest text-xs font-bold">Person 2</span>
+                <h3 class="text-4xl font-bold">Person 2</h3>
+                <p class="text-xl text-primary">Coordinator</p>
+              </div>
+
+              <div class="text-lg text-[#9eb7a8] space-y-4 max-w-xl">
+                <p>
+                  Person 2 focuses on organization and clarity, preferring structured approaches and steady workflows.
+                </p>
+                <p>
+                  They believe consistency and communication play an important role in achieving meaningful progress.
+                </p>
+              </div>
+
+              <div class="py-8 border-y border-[#29382f] w-full">
+                <h4 class="text-2xl italic font-bold">
+                  "Progress happens one step at a time."
+                </h4>
+              </div>
+            </div>
           </div>
         </section>
-      </div>
-    </main>
 
-    <footer class="border-t border-gray-200 dark:border-surface-highlight bg-white dark:bg-[#0c100e] pt-16 pb-8">
+</main>
+
+<footer class="border-t border-gray-200 dark:border-surface-highlight bg-white dark:bg-[#0c100e] pt-16 pb-8">
       <div class="mx-auto max-w-[1280px] px-6 lg:px-10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div class="flex flex-col gap-4">
@@ -175,7 +196,8 @@
             </h4>
             <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors"
               href="index.html#about">About Us</a>
-            <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors" href="OurVisionaries.html">Our Visionaries</a>
+            <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors" href="OurVisionaries.html">Our
+              Visionaries</a>
             <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors" href="#">Partner
               Apps</a>
             <a class="text-sm text-gray-500 dark:text-text-subtle hover:text-primary transition-colors"
@@ -245,8 +267,4 @@
         </div>
       </div>
     </footer>
-  </div>
-  <script src="script.js"></script>
-</body>
-
-</html>
+</body></html>
